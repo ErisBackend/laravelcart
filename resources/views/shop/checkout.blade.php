@@ -4,6 +4,7 @@ Satu Langkah Lagi
 @endsection
 @section('content')
 <div class="container">
+	<h2>CheckOut</h2>
 	<div class="col-md-12 thumbnail product-box">
 					<form action="{{url('checkout')}}" method="post" class="creditly-card-form agileinfo_form">
 						{{ csrf_field() }}
@@ -12,11 +13,11 @@ Satu Langkah Lagi
 								<div class="first-row">
 									<div class="form-goup">
 										<label>Nama Lengkap</label>
-										<input class="form-control" type="text" name="ordfullname" placeholder="Full Name" required="" value="{{ Auth::user()->name }}">
+										<input class="form-control" type="text" name="ordfullname" placeholder="Full Name" required="" value="">
 									</div>
 									<div class="form-goup">
 										<label>E-mail</label>
-										<input class="form-control" type="email" name="ordmail" placeholder="E-mail Name" required="" value="{{ Auth::user()->email }}">
+										<input class="form-control" type="email" name="ordmail" placeholder="E-mail Name" required="" value="">
 									</div>									
 									<div class="w3_agileits_card_number_grids">
 										<div class="w3_agileits_card_number_grid_left">
@@ -40,15 +41,16 @@ Satu Langkah Lagi
 									<div class="form-goup">
 										<label>Provinsi</label>
 										<input type="text" placeholder="Provinsi" class="form-control" name="ordprovinsi" required="">
-									</div>									
+									</div>	
 									<div class="form-goup">
-										<label>Menthode Pembayaran</label>
-										<select name="ordmethod" class="form-control">
-											<option>Select type payments</option>
+										<label>Metode Pembayaran</label>
+										<select name="ordmethod" class="form-control" required="">
+											<option value="">Pilih metode Pembayaran</option>
 											<option value="COD">COD</option>
-											<option value="TF">Transfer ATM</option>
+											<option value="TF">Transfer</option>
 										</select>
-									</div><br><br>
+									</div>															
+									<br><br>
 									<div class="row">
 								  		<div class="container">
 								  			<input type="submit" name="save" class="btn btn-primary" value="Confirm">

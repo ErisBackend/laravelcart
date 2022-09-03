@@ -2,27 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use Illuminate\Http\Request;
-use App\Products;
+use  Gloudemans\Shoppingcart\Facades\Cart;
 
-class TokoController extends Controller
+use App\OrderDetail;
+use Illuminate\Support\Facades\Auth;
+
+class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         //
-        $data        =[];
-        $data['product']= products::all();
-        return view('shop.home',$data);
-    }
-
-        public function product()
-    {
-        //
+        return view('shop.checkout');
     }
 
     /**
@@ -32,7 +34,7 @@ class TokoController extends Controller
      */
     public function create()
     {
-       //
+        //
     }
 
     /**
@@ -44,21 +46,44 @@ class TokoController extends Controller
     public function store(Request $request)
     {
         //
-    }
-  
+        //dd(Auth::user()->id);
+        $orderid = Order::create([
+            'ordersidencytpe' => substr(bcrypt(1),13,17),
+            'usersid' => Auth::user()->id,
+            'ordfullname' => $request->ordfullname,
+            'ordmail' => $request->ordmail,
+            'ordnohp' => $request->ordnohp,
+            'ordalamat' => $request->ordalamat,
+            'ordkota' =>$request->ordkota,
+            'ordprovinsi' => $request->ordprovinsi,
+            'ordbyr' => Cart::subtotal(),
+            'ordstatus' => $request->ordstatus,
+            'ordmethod' => $request->ordmethod,
 
+        ]);
+
+        foreach( Cart::content() as $item)
+        {
+            OrderDetail::create([
+                'ordersid' =>$item->id,
+                'prdid' =>$item->id,
+                'qty' =>$item->qty,
+            ]);
+        }
+
+        return redirect('thanks')->with('sukses','terimakasih');
+
+    }
+    
     /**
      * Display the specified resource.
      *
-     * @param  int  $slug
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
         //
-        $data       = [];
-        $data['products']  =Products::where('prdslug',$slug)->get();
-        return view('shop.single',$data);
     }
 
     /**
@@ -90,20 +115,8 @@ class TokoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function remove(Request $request)
+    public function destroy($id)
     {
         //
-       
-    }
-
-     public function destroy(Request $request)
-    {
-        //
-    }
-
-    public function thanks(Request $request)
-    {
-        //
-        return view('shop.thanks');
     }
 }

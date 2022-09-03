@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Product;
 
@@ -42,6 +43,9 @@ class CartController extends Controller
     {
         //
         //cek color 
+        
+        $ids = $request->id;
+
         if ($request->color!=null)
         {
             $color = $request->color;
@@ -72,7 +76,7 @@ class CartController extends Controller
                 $quantity =1;
             }
 
-        Cart::add($request->id, $request->name, $quantity, $request->price,['prdthumb'=>$request->prdthumb,'color'=>$color,'size'=>$size])->associate('App\Products');
+        Cart::add($ids, $request->name, $quantity, $request->price,['prdthumb'=>$request->prdthumb,'color'=>$color,'size'=>$size])->associate('App\Products');
         
         return redirect('cart')->with('sukses','prodak berhasil ditambahkan ke kernajang');
     }
@@ -109,6 +113,14 @@ class CartController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validasi = validator::make($request->all(),[
+                'quantity' =>'required|numeric|between:1,20'
+        ]);
+
+            if($validasi->fails()){
+                return redirect('cart')->with('gagal','minimal quantity 1 dan maximal 20');
+            }
+
         Cart::update($id,$request->quantity);
         return redirect('cart')->with('update','qty berhasil di update');
     }
@@ -122,5 +134,8 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
+        //dd($id);
+        Cart::remove($id);
+        return redirect('cart')->with('gagal','product dihpus dari keranjang');
     }
 }
