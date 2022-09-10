@@ -111,7 +111,7 @@ Jual Beli Murah se-Indonesia gratis ongkir
                 </div>
                 <!-- /.row content produk -->
                 <div class="row">
-                   @foreach( $new as $r )
+                   @foreach( $product as $r )
                     <div class="col-md-4 text-center col-sm-6 col-xs-6">
                         <div class="thumbnail product-box">
                             <img src="{{url('shopnew')}}/assets/img/{{$r->prdthumb}}" alt="Beli {{$r->prdname}} Murah" />
@@ -123,7 +123,7 @@ Jual Beli Murah se-Indonesia gratis ongkir
                                 <p>
                                   <div class="row">
                                     <div class="col-md-6">
-                                      <form action="{{url('addcart')}}" method="post">
+                                      <form action="{{url('cart')}}" method="post">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id" value="{{$r->id}}">
                                         <input type="hidden" name="name" value="{{$r->prdname}}">

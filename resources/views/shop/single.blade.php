@@ -133,14 +133,14 @@ Jual {{$r->prdname}} Murah se-Indonesia gratis ongkir
         
                     <!-- Detalles especificos del producto -->
                     <div class="section">
-                        <h6 class="title-attr" style="margin-top:15px;" ><small>COLOR</small></h6>                    
+                        <h6 class="title-attr" style="margin-top:15px;" ><small>Warna</small></h6>                    
                         <div>
 	                        <label class="ctr">Biru
-							  <input type="checkbox" value="biru" name="color">
+							  <input type="checkbox" value="biru" name="warna">
 							  <span class="checkmark"></span>
 							</label>&nbsp;
 							<label class="ctr">Merah Muda
-							  <input type="checkbox" value="pink" name="color">
+							  <input type="checkbox" value="pink" name="warna">
 							  <span class="checkmark"></span>
 							</label>
                         </div>
@@ -148,7 +148,7 @@ Jual {{$r->prdname}} Murah se-Indonesia gratis ongkir
                     <div class="section" style="padding-bottom:5px;">
                         <h6 class="title-attr"><small>Size</small></h6>                    
                         <div>
-                            <select name="prdsize" class="attr2">
+                            <select name="size" class="attr2">
                             	<option value=""></option>
                             	<option value="s">S</option>
                             	<option value="m">M</option>

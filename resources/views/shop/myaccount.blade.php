@@ -39,6 +39,8 @@ Beranda {{ Auth::user()->name }}
 							<tr>
 								<th>No</th>
 								<th>Order Id</th>
+								<td>Tagihan</td>
+								<td>Tanggal</td>
 								<th>Status</th>
 								<th>Details</th>
 							</tr>
@@ -46,8 +48,10 @@ Beranda {{ Auth::user()->name }}
 						<tbody>
 							@foreach($orders as $item)
 							<tr>
-								<td>{{$no++}}</td>
+								<td>#</td>
 								<td>{{$item->ordersidencytpe}}</td>
+								<td>{{$item->ordbyr}}</td>
+								<td>{{$item->created_at}}</td>
 								<td>
 									@if($item->ordstatus=="N")
 									<span class="label label-danger text-center">Belum Di Konfirmasi</span>

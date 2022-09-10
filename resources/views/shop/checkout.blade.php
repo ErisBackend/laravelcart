@@ -80,7 +80,7 @@ Satu Langkah Lagi
 								        </td>
 								        <td><img src="{{url('shopnew/assets/img')}}/{{$cart->model->prdthumb}}" height="80"></td>
 								        <td>{{ strtoupper($cart->options->size) }}</td>
-								        <td>{{ ucfirst($cart->options->color) }}</td>
+								        <td>{{ ucfirst($cart->options->warna) }}</td>
 								        <td>{{ $cart->price }}</td>
 								        <td>{{$cart->qty}}</td>
 								        <td>{{$cart->price * $cart->qty }}</td>       

@@ -68,6 +68,8 @@ class CheckoutController extends Controller
                 'ordersid' =>$item->id,
                 'prdid' =>$item->id,
                 'qty' =>$item->qty,
+                'warna' =>$item->options->warna,
+                'size' => $item->options->size
             ]);
         }
 

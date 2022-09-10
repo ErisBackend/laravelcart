@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
+use App\OrderDeatil;
+use Auth;
+
 
 class AccountController extends Controller
 {
@@ -14,6 +18,10 @@ class AccountController extends Controller
     public function index()
     {
         //
+        $data            =  [];
+        $data['orders']  = Order::where('id',Auth::user()->id)->get();
+        return view('shop.myaccount',$data);
+
     }
 
     /**

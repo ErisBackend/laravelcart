@@ -249,7 +249,7 @@ Jual Beli Murah se-Indonesia
                                         <input type="hidden" name="prdthumb" value="{{$item->prdthumb}}">
                                         <input type="submit" class="btn btn-primary" name="" value="Add To Cart">
                                     </form>
-                                    <a href="{{url('beli',[$item->prdslug])}}" class="btn btn-primary" role="button">See Details</a>
+                                    <a href="{{url('beli',[$item->id])}}" class="btn btn-primary" role="button">See Details</a>
                                 </p>
                             </div>
                         </div>

@@ -23,6 +23,9 @@ class TokoController extends Controller
         public function product()
     {
         //
+        $data        =[];
+        $data['product']= products::all();
+        return view('shop.product',$data);
     }
 
     /**
@@ -53,11 +56,11 @@ class TokoController extends Controller
      * @param  int  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
         //
-        $data       = [];
-        $data['products']  =Products::where('prdslug',$slug)->get();
+        $data              = [];
+        $data['products']  =Products::where('id',$id)->get();
         return view('shop.single',$data);
     }
 

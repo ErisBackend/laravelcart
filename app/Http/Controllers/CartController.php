@@ -67,17 +67,18 @@ class CartController extends Controller
             }
 
         //cek qty
-        if($request->quantity!=null)
+        if($request->quantity == false)
             {
-                $quantity = $request->quantity;
+                $request->quantity =1;
             }
             else
             {
-                $quantity =1;
+                
+                $request->quantity;
             }
 
-        Cart::add($ids, $request->name, $quantity, $request->price,['prdthumb'=>$request->prdthumb,'color'=>$color,'size'=>$size])->associate('App\Products');
-        
+        Cart::add($request->id, $request->name,$request->quantity, $request->price,['prdthumb'=>$request->prdthumb,'warna'=>$request->warna,'size'=>$request->size,])->associate('App\Products');
+       //dd(Cart::content());
         return redirect('cart')->with('sukses','prodak berhasil ditambahkan ke kernajang');
     }
 

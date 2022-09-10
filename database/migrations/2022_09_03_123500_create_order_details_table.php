@@ -18,6 +18,8 @@ class CreateOrderDetailsTable extends Migration
             $table->integer('ordersid');
             $table->char('prdid');
             $table->integer('qty');
+            $table->char('warna');
+            $table->char('size');
             $table->timestamps();
         });
     }

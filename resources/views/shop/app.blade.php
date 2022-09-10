@@ -43,7 +43,7 @@
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i>&nbsp;<b>{{Cart::count()}}</b><b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             @foreach(Cart::content() as $cart )
-                            <li><a href="#">{{$cart->name}}</a><small><span class="pull-right badge badge-success">{{$cart->model->prdprice}} x {{$cart->qty}}</span></small></li>
+                            <li><a href="#">{{$cart->name}}</a><small><span class="pull-right badge badge-success">{{$cart->prdprice}} x {{$cart->qty}}</span></small></li>
                             @endforeach
                             <li class="divider"></li>
                             @if(sizeof(Cart::content()) > 0)

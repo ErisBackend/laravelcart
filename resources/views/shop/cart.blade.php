@@ -47,7 +47,7 @@ Checkout Sekarang !
 			        </td>
 			        <td><img src="{{url('shopnew/assets/img')}}/{{$cart->model->prdthumb}}" class="img-responsive"></td>
 			        <td>{{ strtoupper($cart->options->size) }}</td>
-			        <td>{{ ucfirst($cart->options->color) }}</td>
+			        <td>{{ ucfirst($cart->options->warna) }}</td>
 			        <td>{{ $cart->price }}</td>
 			        <td>
 			        	<form method="post" action="{{url('cart',[ $cart->rowId]) }}">
