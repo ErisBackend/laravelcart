@@ -19,6 +19,7 @@ class AccountController extends Controller
     {
         //
         $data            =  [];
+        $data['no']      = 1;
         $data['orders']  = Order::where('id',Auth::user()->id)->get();
         return view('shop.myaccount',$data);
 

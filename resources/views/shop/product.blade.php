@@ -133,7 +133,7 @@ Jual Beli Murah se-Indonesia gratis ongkir
                                       </form>                                      
                                     </div>
                                     <div class="col-md-6">
-                                      <a href="{{url('beli',$r->prdslug)}}" class="btn btn-primary" role="button">See Details</a>                                      
+                                      <a href="{{url('beli',$r->id)}}" class="btn btn-primary" role="button">See Details</a>                                      
                                     </div>
                                   </div>
                                 </p>

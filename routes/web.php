@@ -8,6 +8,7 @@ Route::get('/','TokoController@index');
 Route::get('thanks','TokoController@thanks');
 Route::get('toko','TokoController@product');
 Route::get('beli/{id}','TokoController@show');
+// Route::get('home','TokoController@show');
 
 // Route::resource('/cart',[CartController::class,'store']);
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Sep 2022 pada 09.35
+-- Waktu pembuatan: 10 Sep 2022 pada 08.19
 -- Versi server: 10.4.24-MariaDB
 -- Versi PHP: 7.4.29
 
@@ -67,16 +67,17 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(13, '2019_08_19_000000_create_failed_jobs_table', 1),
 (14, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (17, '2014_10_12_200000_add_two_factor_columns_to_users_table', 2),
 (22, '2014_10_12_000000_create_users_table', 3),
 (23, '2014_10_12_100000_create_password_resets_table', 3),
-(24, '2018_11_07_092708_create_category_table', 3),
-(25, '2022_07_26_204914_create_products_table', 3),
-(29, '2021_01_10_064234_create_sessions_table', 4),
-(30, '2022_09_03_121914_create_orders_table', 4),
-(31, '2022_09_03_123500_create_order_details_table', 4);
+(40, '2018_11_07_092708_create_category_table', 4),
+(41, '2019_08_19_000000_create_failed_jobs_table', 4),
+(42, '2021_01_10_064234_create_sessions_table', 4),
+(43, '2022_07_26_204914_create_products_table', 4),
+(44, '2022_09_03_121914_create_orders_table', 4),
+(45, '2022_09_03_123500_create_order_details_table', 4),
+(46, '2022_09_07_192830_create_users_table', 5);
 
 -- --------------------------------------------------------
 
@@ -106,10 +107,29 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `ordersidencytpe`, `usersid`, `ordfullname`, `ordmail`, `ordnohp`, `ordalamat`, `ordkota`, `ordprovinsi`, `ordbyr`, `ordstatus`, `ordmethod`, `created_at`, `updated_at`) VALUES
-(1, 't1L626hCkY0xT7i.v', 2, 'e', 'e@gmail.com', '12345678', 'dada', 'adawd', 'ada', '4,000,000.00', NULL, 'TF', '2022-09-03 06:50:15', '2022-09-03 06:50:15'),
-(2, 'Dz.fkaO5SYNyjgVeZ', 2, 'e', 'e@gmail.com', '12345678', 'srsrd', 'bekasi', '12312', '4,000,000.00', NULL, 'COD', '2022-09-03 06:53:55', '2022-09-03 06:53:55'),
-(3, 'NYs2rC9xWqdQvXhuf', 2, 'e', 'e@gmail.com', '12345678', 'dawd', 'bekasi', 'adaw', '4,000,000.00', NULL, 'COD', '2022-09-03 06:55:55', '2022-09-03 06:55:55'),
-(4, 'vDgIz3pKQhi1nNx.A', 2, 'e', 'e@gmail.com', '12345678', 'ftf', 'bekasi', 'sa', '4,000,000.00', NULL, 'COD', '2022-09-03 06:58:27', '2022-09-03 06:58:27');
+(1, 'dXysNTWpHLrnfig.X', 2, 'e', 'e@gmail.com', '12345678', 'dawda', 'dawa', 'adwwad', '1,000,000.00', NULL, 'COD', '2022-09-10 03:46:36', '2022-09-10 03:46:36'),
+(2, 'vBLiaSz2oN9n1lyee', 2, 'e', 'e@gmail.com', '12345678', 'dawda', 'dawd', 'adwda', '7,000,000.00', NULL, 'TF', '2022-09-10 04:16:49', '2022-09-10 04:16:49'),
+(3, 'pFgBs4t7usUL.4aO.', 2, 'e', 'e@gmail.com', '12345678', 'gdrg', 'adawd', 'sa', '7,000,000.00', NULL, 'COD', '2022-09-10 04:18:17', '2022-09-10 04:18:17'),
+(4, 'MS60mi5fZ6Q1LZDOH', 2, 'e', 'e@gmail.com', '12345678', 'gdrg', 'adawd', 'sa', '7,000,000.00', NULL, 'COD', '2022-09-10 04:19:40', '2022-09-10 04:19:40'),
+(5, 'r5qFa769zmr9i00.1', 2, 'e', 'e@gmail.com', '12345678', 'gdrg', 'adawd', 'sa', '7,000,000.00', NULL, 'COD', '2022-09-10 04:22:45', '2022-09-10 04:22:45'),
+(6, '9d1vdiVB5YhbTGs.3', 2, 'aaf', 'e@gmail.com', '12345678', 'fddtdg', 'fyfyfy', 'ggg', '7,000,000.00', NULL, 'TF', '2022-09-10 04:26:08', '2022-09-10 04:26:08'),
+(7, 'Plw9NXgbF9n173J.K', 2, 'aaf', 'e@gmail.com', '12345678', 'fddtdg', 'fyfyfy', 'ggg', '7,000,000.00', NULL, 'TF', '2022-09-10 04:27:00', '2022-09-10 04:27:00'),
+(8, '7cotR8yYeAbS0BZe7', 2, 'aaf', 'e@gmail.com', '12345678', 'f', 'da', 'adaw', '7,000,000.00', NULL, 'COD', '2022-09-10 04:27:26', '2022-09-10 04:27:26'),
+(9, 'pfO4KnTUq9XAdT1uG', 2, 'aaf', 'e@gmail.com', '12345678', 'jhjhjh', '123123', 'dawaw', '12,000,000.00', NULL, 'COD', '2022-09-10 04:29:05', '2022-09-10 04:29:05'),
+(10, 'L2FnBCf9nhilBcy.C', 3, 'q', 'wefwej@gmail.com', 'q', 'q', 'q', 'q', '2,000,000.00', NULL, 'COD', '2022-09-10 05:05:48', '2022-09-10 05:05:48'),
+(11, 'l1Yys.h1a2Ix6qCe8', 3, 'qqq', 'e@gmail.com', 'adwd', 'adwd', 'adwa', 'awd', '1,000,000.00', NULL, 'COD', '2022-09-10 05:06:53', '2022-09-10 05:06:53'),
+(12, 'jJFjj4QntTfAMGhOl', 3, 'efe', 'e@gmail.com', 'sfeef', 'seffs', 'sefse', 'ses', '1,000,000.00', NULL, 'COD', '2022-09-10 05:09:00', '2022-09-10 05:09:00'),
+(13, 'guneSRRdotan4bdeo', 2, 'e4te', 'e@gmail.com', 'wr3w', 'rw3rw3r', 'wr3wrw', '3rw3rw3r', '13,000,000.00', NULL, 'TF', '2022-09-10 05:13:12', '2022-09-10 05:13:12'),
+(14, 'mUghQOJ5CdEhOp9OX', 2, 'e', 'e@gmail.com', 'weewfef', 'sfefsef', 'sefsf', 'dawaw', '12,000,000.00', NULL, 'TF', '2022-09-10 05:17:42', '2022-09-10 05:17:42'),
+(15, 'IqECFOTyEx/1svlO/', 2, 'e', 'e@gmail.com', 'rw', 'ess', 'bekasi', 'sa', '2,000,000.00', NULL, 'COD', '2022-09-10 05:18:56', '2022-09-10 05:18:56'),
+(16, 'uOfLwJFPLtDTJZCuJ', 2, 'e', 'e@gmail.com', 'wdaw', 'awdawd', 'bekasi', 'sa', '2,000,000.00', NULL, 'COD', '2022-09-10 05:20:08', '2022-09-10 05:20:08'),
+(17, 'ZXhSAuTSFdB6jid.6', 2, 'seff', 'e@gmail.com', 'wrw3', 'wr3wr', 'wr3w', 'w3rw3', '1,000,000.00', NULL, 'TF', '2022-09-10 05:21:41', '2022-09-10 05:21:41'),
+(18, 'TzzA.dDn7q7tIQuuy', 2, 'e', 'e@gmail.com', '12345678', 'wrr', 'bekasi', 'sa', '1,000,000.00', NULL, 'COD', '2022-09-10 05:22:48', '2022-09-10 05:22:48'),
+(19, 'BhrPDPDi04EaCYs.E', 2, 'wwe', 'e@gmail.com', 'sfefs', 'sefsf', 'sefsf', 'sefsf', '1,000,000.00', NULL, 'COD', '2022-09-10 05:23:19', '2022-09-10 05:23:19'),
+(20, 'SztypD9Wj.uBgL.ek', 2, 'e', 'e@gmail.com', 'ZX', 'ZXZX', 'ZXZX', 'ZXX', '2,000,000.00', NULL, 'COD', '2022-09-10 05:45:30', '2022-09-10 05:45:30'),
+(21, 'WShGjVVOKS2YJ91OG', 3, 'e', 'e@gmail.com', '12345678', 'deaed', 'bekasi', 'sa', '1,000,000.00', NULL, 'COD', '2022-09-10 06:03:39', '2022-09-10 06:03:39'),
+(22, 'ixIhqhnBkZXLAKi.M', 3, 'e', 'e@gmail.com', '12345678', 'sefsf', 'bekasi', 'sa', '3,000,000.00', NULL, 'COD', '2022-09-10 06:09:24', '2022-09-10 06:09:24'),
+(23, '0ZZJgB2mbCswCsxu7', 3, 'e', 'e@gmail.com', '12345678', 'aawda', 'bekasi', 'sa', '1,000,000.00', NULL, 'COD', '2022-09-10 06:11:08', '2022-09-10 06:11:08');
 
 -- --------------------------------------------------------
 
@@ -122,6 +142,8 @@ CREATE TABLE `order_details` (
   `ordersid` int(11) NOT NULL,
   `prdid` char(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `qty` int(11) NOT NULL,
+  `warna` char(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `size` char(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -130,11 +152,15 @@ CREATE TABLE `order_details` (
 -- Dumping data untuk tabel `order_details`
 --
 
-INSERT INTO `order_details` (`id`, `ordersid`, `prdid`, `qty`, `created_at`, `updated_at`) VALUES
-(1, 2, '2', 1, '2022-09-03 06:55:55', '2022-09-03 06:55:55'),
-(2, 200, '200', 3, '2022-09-03 06:55:55', '2022-09-03 06:55:55'),
-(3, 2, '2', 1, '2022-09-03 06:58:27', '2022-09-03 06:58:27'),
-(4, 200, '200', 3, '2022-09-03 06:58:27', '2022-09-03 06:58:27');
+INSERT INTO `order_details` (`id`, `ordersid`, `prdid`, `qty`, `warna`, `size`, `created_at`, `updated_at`) VALUES
+(1, 2, '2', 7, 'pink', 'xl', '2022-09-10 04:29:05', '2022-09-10 04:29:05'),
+(2, 2, '2', 5, 'pink', 's', '2022-09-10 04:29:05', '2022-09-10 04:29:05'),
+(3, 2, '2', 7, 'pink', 'xl', '2022-09-10 05:13:12', '2022-09-10 05:13:12'),
+(4, 2, '2', 5, 'pink', 's', '2022-09-10 05:13:12', '2022-09-10 05:13:12'),
+(5, 2, '2', 7, 'pink', 'xl', '2022-09-10 05:17:42', '2022-09-10 05:17:42'),
+(6, 2, '2', 5, 'pink', 's', '2022-09-10 05:17:42', '2022-09-10 05:17:42'),
+(7, 2, '2', 2, 'biru', 's', '2022-09-10 05:45:30', '2022-09-10 05:45:30'),
+(8, 2, '2', 1, NULL, NULL, '2022-09-10 06:11:08', '2022-09-10 06:11:08');
 
 -- --------------------------------------------------------
 
@@ -173,8 +199,7 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
-  `prdid` int(10) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `prdname` char(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prdcatid` int(11) NOT NULL,
   `prdsize` char(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -182,7 +207,6 @@ CREATE TABLE `products` (
   `prddesc` char(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prdstock` int(11) NOT NULL,
   `prdthumb` char(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `prdslug` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -191,24 +215,21 @@ CREATE TABLE `products` (
 -- Dumping data untuk tabel `products`
 --
 
-INSERT INTO `products` (`id`, `prdid`, `prdname`, `prdcatid`, `prdsize`, `prdprice`, `prddesc`, `prdstock`, `prdthumb`, `prdslug`, `created_at`, `updated_at`) VALUES
-(200, 2, 'Samsung Galaxy 1', 1, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', 'samsung-galaxi-1', NULL, NULL),
-(2, 4, 'Samsung Galaxy2', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', 'samsung-galaxi-2', NULL, NULL),
-(0, 6, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', '0', NULL, NULL),
-(0, 8, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', '0', NULL, NULL),
-(0, 10, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', '0', NULL, NULL),
-(0, 12, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', '0', NULL, NULL),
-(0, 14, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', '0', NULL, NULL),
-(0, 16, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', '0', NULL, NULL),
-(0, 18, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', '0', NULL, NULL),
-(0, 20, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', '0', NULL, NULL),
-(0, 22, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', '0', NULL, NULL),
-(0, 24, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, 'dummyimg.png', '0', NULL, NULL),
-(0, 26, 'Sepatu', 1, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '1.png', '0', NULL, NULL),
-(0, 28, 'Sepatu', 1, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '1.png', '0', NULL, NULL),
-(0, 30, 'Sepatu', 1, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '1.png', '0', NULL, NULL),
-(0, 32, 'Sepatu', 1, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '1.png', '0', NULL, NULL),
-(0, 34, 'Sepatu', 1, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '1.png', '0', NULL, NULL);
+INSERT INTO `products` (`id`, `prdname`, `prdcatid`, `prdsize`, `prdprice`, `prddesc`, `prdstock`, `prdthumb`, `created_at`, `updated_at`) VALUES
+(2, 'Samsung Galaxy', 1, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '1.jpg', NULL, NULL),
+(4, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '2.jpg', NULL, NULL),
+(6, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '3.jpg', NULL, NULL),
+(8, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '4.jpg', NULL, NULL),
+(10, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '6.jpg', NULL, NULL),
+(12, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '7.jpg', NULL, NULL),
+(14, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '8.jpg', NULL, NULL),
+(16, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '9.jpg', NULL, NULL),
+(18, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '10.jpg', NULL, NULL),
+(20, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '11.jpg', NULL, NULL),
+(22, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '12.jpg', NULL, NULL),
+(24, 'Samsung Galaxy', 2, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '13.jpg', NULL, NULL),
+(26, 'Sepatu', 1, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '14.jpg', NULL, NULL),
+(28, 'Sepatu', 1, '', 1000000, 'Cras at nisl et justo sodales tincidunt. Vestibulum rhoncus aliquam mauris, in posuere ex sagittis pellentesque. Curabitur ultrices purus quis nibh vehicula, ut facilisis turpis porttitor. Fusce sed luctus ipsum. Maecenas viverra leo bibendum augue tincid', 23, '15.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -237,9 +258,8 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role_as` tinyint(4) NOT NULL DEFAULT 0,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `current_team_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `profile_photo_path` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -248,10 +268,10 @@ CREATE TABLE `users` (
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin1@gmail.com', NULL, '5f4dcc3b5aa765d61d8327deb882cf99', NULL, NULL, NULL, NULL, NULL),
-(2, 'eris', 'e@mail.com', NULL, '$2y$10$zEi0n4nHlXtrrJSIoV5h1OYx8bK/WU8hcAsu5/l3bbwQl/EWIpGim', 'iNz1JspmNRl7jhmWsbROlBAg6WTAGlNnT0twyFGND1ebs0BBCzJM70IXEi2l', NULL, NULL, '2022-09-03 05:00:24', '2022-09-03 05:00:24'),
-(3, 'admin', 'admin@gmail.com', NULL, '$2y$10$/kW/s.r58RhcfwR77h2zQuU.22LSCAxaxn8mU4QG6J/7IZ6/vCo/.', 'C7OorT6tUIBHFE4r7ID1i3GI0oCHEQPvBfYBVdFbjAfXI8jDbFGHUQXQt8oN', NULL, NULL, '2022-09-03 05:16:40', '2022-09-03 05:16:40');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role_as`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'eris', 'eris@gmail.com', NULL, '$2y$10$l58mbEqQ1Iv7Q0WDFkDqeeG7fb8N9rMoRqJvADsCqLLExPC2V5w/S', 0, 'BPqlWnksQkkZWBKzZG11LXyEBGyWY5fce2tcuiPp2ROHflLDQ5p7KndR7evd', '2022-09-10 03:38:21', '2022-09-10 03:38:21'),
+(2, 'eris', 'er@gmail.om', NULL, '$2y$10$SPI52ZyE0.9Wjxp/qwSvm.wb67bQcBe5zRJaEC2lkGhBqvBD5UR4C', 0, 'E29QzjccRNRADr0Nzke2pTR0yynccmiJ3GT8vGtsdzYdgIumd7PArU8lNDQ7', '2022-09-10 03:42:55', '2022-09-10 03:42:55'),
+(3, 'yosi', 'yosi@gmail.com', NULL, '$2y$10$VhzUKZvcqSoMLO6Z2ugloe8dxEG9IHUtc2UeFOqOlo.GEIKgKuhba', 0, NULL, '2022-09-10 05:05:18', '2022-09-10 05:05:18');
 
 --
 -- Indexes for dumped tables
@@ -306,7 +326,7 @@ ALTER TABLE `personal_access_tokens`
 -- Indeks untuk tabel `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`prdid`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `sessions`
@@ -342,19 +362,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `personal_access_tokens`
@@ -366,7 +386,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `prdid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

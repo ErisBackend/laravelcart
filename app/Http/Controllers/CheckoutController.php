@@ -73,6 +73,8 @@ class CheckoutController extends Controller
             ]);
         }
 
+        cart::destroy();
+
         return redirect('thanks')->with('sukses','terimakasih');
 
     }

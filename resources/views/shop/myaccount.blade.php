@@ -48,7 +48,7 @@ Beranda {{ Auth::user()->name }}
 						<tbody>
 							@foreach($orders as $item)
 							<tr>
-								<td>#</td>
+								<td>{{$no++}}</td>
 								<td>{{$item->ordersidencytpe}}</td>
 								<td>{{$item->ordbyr}}</td>
 								<td>{{$item->created_at}}</td>

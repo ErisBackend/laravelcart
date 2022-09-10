@@ -46,13 +46,13 @@ class CartController extends Controller
         
         $ids = $request->id;
 
-        if ($request->color!=null)
+        if ($request->warna!=null)
         {
-            $color = $request->color;
+            $warna = $request->warna;
         }
         else
         {
-            $color = null;
+            $warna = null;
         }
         
         //cek size 
@@ -67,6 +67,7 @@ class CartController extends Controller
             }
 
         //cek qty
+        //jika false adalah kondisi jika berarti tidak merequest apapun dan memunculkan datanya
         if($request->quantity == false)
             {
                 $request->quantity =1;
