@@ -46,8 +46,12 @@ class CheckoutController extends Controller
     public function store(Request $request)
     {
         //
+
+        
         //dd(Auth::user()->id);
         $orderid = Order::create([
+            //Penambahan
+            'id' => $request->id,
             'ordersidencytpe' => substr(bcrypt(1),13,17),
             'usersid' => Auth::user()->id,
             'ordfullname' => $request->ordfullname,
@@ -61,11 +65,16 @@ class CheckoutController extends Controller
             'ordmethod' => $request->ordmethod,
 
         ]);
+            //penambahan variabel untuk mendapatkan id order
+        $idorder = $orderid->id;
 
         foreach( Cart::content() as $item)
         {
-            OrderDetail::create([
-                'ordersid' =>$item->id,
+            // ordersid & prdid = diambil dari id produk seharusnya 
+            // mengambi dari order
+
+           OrderDetail::create([
+                'ordersid' =>$idorder,
                 'prdid' =>$item->id,
                 'qty' =>$item->qty,
                 'warna' =>$item->options->warna,

@@ -241,21 +241,30 @@ Jual Beli Murah se-Indonesia
                                 <p><a href="#">Ptional dismiss button </a></p>
                                 <p>Ptional dismiss button in tional dismiss button in   </p>
                                 <p>
+                                    <!-- Button trigger modal -->
+                               <!-- tombol modal -->
+                               
+                                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+                                Add To Cart
+                                </button>
+
+                                                                        
                                     <form method="POST" action="{{ url('cart') }}">
                                         {{ csrf_field()}}
                                         <input type="hidden" name="id" value="{{$item->id}}">
                                         <input type="hidden" name="name" value="{{$item->prdname}}">
                                         <input type="hidden" name="price" value="{{$item->prdprice}}">
                                         <input type="hidden" name="prdthumb" value="{{$item->prdthumb}}">
+                                        
                                         <input type="submit" class="btn btn-primary" name="" value="Add To Cart">
                                     </form>
-                                    <a href="{{url('beli',[$item->id])}}" class="btn btn-primary" role="button">See Details</a>
+                                    <a href="{{url('beli',[$item->prdid])}}" class="btn btn-primary" role="button">See Details</a>
                                 </p>
                             </div>
                         </div>
                     </div>
                     @endforeach
-            <!--DIHAPUS-->
+                 <!--DIHAPUS-->
 
                 </div>
                 <div>
@@ -346,6 +355,8 @@ Jual Beli Murah se-Indonesia
             <!-- /.col -->
         </div>
         <!-- /.row -->
+
+        
     </div>
     <!-- /.container -->
     <div class="col-md-12 download-app-box text-center">
@@ -353,4 +364,6 @@ Jual Beli Murah se-Indonesia
         <span class="glyphicon glyphicon-download-alt"></span>Download Our Android App and Get 10% additional Off on all Products . <a href="#" class="btn btn-danger btn-lg">DOWNLOAD  NOW</a>
 
     </div>
+
+    
 @endsection

@@ -17,6 +17,7 @@ Route::get('beli/{id}','TokoController@show');
 Route::resource('cart','CartController');
 Route::resource('/checkout','CheckoutController');
 Route::resource('/myaccount','AccountController');
+Route::get('konfirmasi_pembayaran','AccountController@confirm');
 
 
 Route::auth();

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
-use App\OrderDeatil;
+use App\OrderDetail;
 use Auth;
 
 
@@ -15,13 +15,20 @@ class AccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function index()
     {
         //
         $data            =  [];
         $data['no']      = 1;
-        $data['orders']  = Order::where('id',Auth::user()->id)->get();
-        return view('shop.myaccount',$data);
+        $data['orders']  = Order::where('usersid',Auth::user()->id)->get();
+        return view('shop.user.dasboard',$data);
 
     }
 
@@ -33,6 +40,12 @@ class AccountController extends Controller
     public function create()
     {
         //
+    }
+
+    public function confirm()
+    {
+        //
+        return view('shop.user.confirm');
     }
 
     /**
@@ -55,6 +68,15 @@ class AccountController extends Controller
     public function show($id)
     {
         //
+        $data            = [];
+        $data['user']    =Order::where('id',$id)->get();
+         $data ['orders'] = OrderDetail::join('products','products.id','=','order_details.prdid')->where('order_details.ordersid',$id)->get();
+       
+        //dd($data['orders']);
+        
+    
+        // Mengambil data sama berdasarkan id dan prdid 
+        return view('shop.invoices',$data);
     }
 
     /**
